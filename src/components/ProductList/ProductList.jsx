@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { fetchProducts } from "../../utils/api";
+import '../../App.css';
 
 const ProductList = () => {
     const [products, setProducts] = useState([]);
@@ -24,17 +25,25 @@ const ProductList = () => {
       return <div>Loading...</div>;
     }
   
+    const handleViewDetails = (productId) => {
+        // Will implement navigation to product details page here later
+        console.log(`Navigate to details of product with ID: ${productId}`);
+      };
+
     return (
+        
       <div>
         {products.length === 0 ? (
           <div>No products available</div>
         ) : (
           products.map((product) => (
-            <div key={product.id}>
+            <div key={product.id} className="product-item">
+                <img src={product.image} alt={product.title} style={{ width: '100px', height: '100px' }} />
               <h2>{product.title}</h2>
               <h3>${product.price}</h3>
-              <img src={product.image} alt={product.title} style={{ width: '100px', height: '100px' }} />
+              <button onClick={() => handleViewDetails(product.id)}>View Details</button>
             </div>
+            
           ))
         )}
       </div>

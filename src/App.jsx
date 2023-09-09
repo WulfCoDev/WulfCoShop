@@ -5,10 +5,15 @@ function App() {
 
 
   return (
-    <>
-     <ProductList />
-    </>
-  )
+    <div>
+      <header>
+        <h1>WulfCo Shop</h1>
+      </header>
+      <div className="container">
+        <ProductList />
+      </div>
+    </div>
+  );
 }
 
 export default App
