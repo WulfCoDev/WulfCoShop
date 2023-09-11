@@ -1,19 +1,18 @@
-import './App.css'
-import ProductList from './components/ProductList/ProductList'
+import { BrowserRouter as Router } from 'react-router-dom';
+import './App.css';
+import AppRoutes from './utils/Routes';
 
-function App() {
-
-
+const App = () => {
   return (
-    <div>
-      <header>
-        <h1>WulfCo Shop</h1>
-      </header>
-      <div className="container">
-        <ProductList />
-      </div>
+    <Router>
+    <header>
+      <h1>WulfCo Shop</h1>
+    </header>
+    <div className="container">
+      <AppRoutes />
     </div>
-  );
-}
+  </Router>
+);
+};
 
-export default App
+export default App;

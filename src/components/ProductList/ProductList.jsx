@@ -1,10 +1,12 @@
 import { useState, useEffect } from "react";
 import { fetchProducts } from "../../utils/api";
+import { useNavigate } from "react-router-dom";
 import '../../App.css';
 
 const ProductList = () => {
     const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(true);
+    const navigate = useNavigate();
   
     useEffect(() => {
       const fetchData = async () => {
@@ -26,7 +28,9 @@ const ProductList = () => {
     }
   
     const handleViewDetails = (productId) => {
+      navigate (`/product/${productId}`);
         // Will implement navigation to product details page here later
+
         console.log(`Navigate to details of product with ID: ${productId}`);
       };
 
