@@ -30,29 +30,30 @@ header {
   padding: 1rem;
 }
 
-.product-item {
-  display: flex;
-  align-items: center;
-  margin-bottom: 1rem;
-  border: 1px solid var(--thistle);
-  padding: 1rem;
-  background-color: var(--lavender-blush);
-}
-
-.product-item img {
-  width: 100px;
-  height: 100px;
-  margin-right: 1rem;
-}
-
-.product-item button {
-  background-color: var(--rose-quartz);
-  color: white;
-  border: none;
-  padding: 0.5rem;
-  cursor: pointer;
-}
-
-.product-item button:hover {
+.navbar {
   background-color: var(--battleship-gray);
+  color: var(--magnolia);
+  padding: 1rem;
+}
+
+.navbar__logo {
+  font-size: 1.5rem;
+}
+
+.navbar__links {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+}
+
+.navbar__links li a {
+  color: var(--magnolia);
+  text-decoration: none;
+}
+
+.navbar__links li a:hover {
+  color: var(--rose-quartz);
 }

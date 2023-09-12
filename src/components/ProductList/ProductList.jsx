@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { fetchProducts } from "../../utils/api";
 import { useNavigate } from "react-router-dom";
-import '../../App.css';
+import './ProductList.css';
 
 const ProductList = () => {
     const [products, setProducts] = useState([]);
@@ -29,7 +29,7 @@ const ProductList = () => {
   
     const handleViewDetails = (productId) => {
       navigate (`/product/${productId}`);
-        // Will implement navigation to product details page here later
+      
 
         console.log(`Navigate to details of product with ID: ${productId}`);
       };
@@ -41,13 +41,14 @@ const ProductList = () => {
           <div>No products available</div>
         ) : (
           products.map((product) => (
-            <div key={product.id} className="product-item">
+            <div className="product-list">
+            <div key={product.id} className="product-card">
                 <img src={product.image} alt={product.title} style={{ width: '100px', height: '100px' }} />
               <h2>{product.title}</h2>
               <h3>${product.price}</h3>
-              <button onClick={() => handleViewDetails(product.id)}>View Details</button>
+              <button onClick={() => handleViewDetails(product.id)} className="view-details-btn">View Details</button>
             </div>
-            
+            </div>
           ))
         )}
       </div>
