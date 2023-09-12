@@ -1,12 +1,14 @@
 import { useState, useEffect } from "react";
 import { fetchProducts } from "../../utils/api";
 import { useNavigate } from "react-router-dom";
+import { useDispatchCart } from "../User/CartContext";
 import './ProductList.css';
 
 const ProductList = () => {
     const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(true);
     const navigate = useNavigate();
+    const dispatch = useDispatchCart();
   
     useEffect(() => {
       const fetchData = async () => {
@@ -34,6 +36,10 @@ const ProductList = () => {
         console.log(`Navigate to details of product with ID: ${productId}`);
       };
 
+      const addToCart = (product) => { // New function
+        dispatch({ type: 'ADD_ITEM', item: { ...product, quantity: 1 } });
+      };
+
     return (
         
       <div>
@@ -47,6 +53,7 @@ const ProductList = () => {
               <h2>{product.title}</h2>
               <h3>${product.price}</h3>
               <button onClick={() => handleViewDetails(product.id)} className="view-details-btn">View Details</button>
+              <button onClick={() => addToCart(product)}>Add to Cart</button>
             </div>
             </div>
           ))
