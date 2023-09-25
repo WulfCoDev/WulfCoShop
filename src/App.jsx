@@ -9,9 +9,6 @@ const App = () => {
     <Router>
       <CartProvider>
       <Navbar />
-    <header>
-      <h1>WulfCo Shop</h1>
-    </header>
     <div className="container">
       <AppRoutes />
     </div>

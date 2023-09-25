@@ -10,9 +10,12 @@ const reducer = (state, action) => {
     case 'REMOVE_ITEM':
       return state.filter(item => item.id !== action.id);
     case 'UPDATE_ITEM_QUANTITY':
-      return state.map(item =>
-        item.id === action.id ? { ...item, quantity: action.quantity } : item
-      );
+  if (action.quantity <= 0) {
+    return state.filter(item => item.id !== action.id);
+  }
+  return state.map(item =>
+    item.id === action.id ? { ...item, quantity: action.quantity } : item
+  );
     default:
       throw new Error(`Unknown action: ${action.type}`);
   }

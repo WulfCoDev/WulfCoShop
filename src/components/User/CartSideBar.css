@@ -1,0 +1,42 @@
+.cart-sidebar {
+    position: fixed;
+    top: 0;
+    right: -400px;
+    width: 400px;
+    height: 100%;
+    background: white;
+    overflow-y: auto;
+    transition: right 0.3s;
+    z-index: 1000;
+  }
+  
+  .cart-sidebar.open {
+    right: 0;
+  }
+  
+  .close-button {
+    position: absolute;
+    top: 0;
+    left: 10px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+  }
+  
+  .cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .checkout-button {
+    width: 75%;
+    padding: 10px;
+    background: red;
+    color: white;
+    text-align: center;
+    cursor: pointer;
+  }
+  

@@ -16,3 +16,20 @@ export const fetchProducts = async () => {
     }
     return await response.json();
   }
+
+  export const fetchAllUsers = async () => {
+    const response = await fetch(api + '/users');
+    if (!response.ok) {
+      throw new Error ('Failed to fetch users');
+    }
+    return await response.json();
+  }
+
+  export const fetchSingleUser = async (id) => {
+    console.log ('fetching user with ID:', id);
+    const response = await fetch(api + `/users/${id}`);
+    if (!response.ok){
+      throw new Error ('Failed to fetch user with ID:',id);
+    }
+    return await response.json();
+  }

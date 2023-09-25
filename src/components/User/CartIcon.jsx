@@ -1,18 +1,33 @@
-import { useCart } from './CartContext';
+import { useCart, useDispatchCart } from './CartContext';
+import { HiShoppingCart } from 'react-icons/hi2';
 import './CartIcon.css';
-import { Link } from 'react-router-dom';
+import { useState } from 'react';
+import CartSidebar from './CartSideBar';
+import './CartSideBar.css';  // Add this line
+
 
 const CartIcon = () => {
     const cart = useCart();
+    const dispatch = useDispatchCart();
     const totalItems = cart.reduce((acc, item) => acc + item.quantity, 0);
+
+    
+
+    const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  
+  
+  const toggleSidebar = () => {
+    setIsSidebarOpen(!isSidebarOpen);
+  };
   
     return (
-        <Link to="/cart">
       <div className="cart-icon">
-        <i className="fas fa-shopping-cart"></i> 
+        <button onClick={toggleSidebar}>
+          <HiShoppingCart />
+        </button>
         <span className="cart-count">{totalItems}</span>
+        <CartSidebar isOpen={isSidebarOpen} toggleSidebar={toggleSidebar} cart={cart} />
       </div>
-      </Link>
     );
   };
   
