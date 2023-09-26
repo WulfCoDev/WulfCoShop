@@ -1,19 +1,22 @@
 import React from 'react';
 import './CartSideBar.css';
 import { useDispatchCart, useCart } from './CartContext';
+import { useNavigate } from 'react-router-dom';
 
 const CartSidebar = ({ isOpen, toggleSidebar, }) => {
     const cart = useCart();
     const dispatch = useDispatchCart();
+    const navigate = useNavigate();
   
     // Calculate the total price of the cart items
-    const totalCost = cart.reduce((total, item) => total + (item.price * item.quantity), 0).toFixed(2);
+    const totalCost = cart.reduce((acc, item) => acc + (item?.price * item?.quantity || 0), 0).toFixed(2);
   
-    // Function to remove an item from the cart
-    const removeFromCart = (id) => {
-      dispatch({ type: 'REMOVE_ITEM', id });
-    };
+console.log(cart.map(item => item.id));
+            console.log(cart);
 
+    const toCheckout = () => {
+      navigate ('/checkout');
+    }
 
   return (
     <div className={`cart-sidebar ${isOpen ? 'open' : ''}`}>
@@ -23,6 +26,8 @@ const CartSidebar = ({ isOpen, toggleSidebar, }) => {
           <p>Your cart is empty</p>
         ) : (
           <ul>
+            
+
             {cart.map((item) => (
               <li key={item.id}>
                 <div className='cart-item'>
@@ -38,7 +43,7 @@ const CartSidebar = ({ isOpen, toggleSidebar, }) => {
           </ul>
         )}
         {cart.length > 0 && <div>Total Price: ${totalCost}</div>}
-        <button className="checkout-button">Proceed to Checkout</button>
+        <button className="checkout-button" onClick={toCheckout}>Proceed to Checkout</button>
       </div>
     );
 };

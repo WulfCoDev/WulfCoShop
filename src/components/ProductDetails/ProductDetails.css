@@ -38,11 +38,11 @@
 
   .return {
     position: absolute;
-    top: 200px;  
+    top: 115px;  
     left: 50px; 
     z-index: 3; 
     color: black;
     cursor: pointer;
-    font-size: 2.5rem;
+    font-size: 2.0rem;
   }
   

@@ -1,17 +1,19 @@
 .navbar {
     background-color: var(--thistle);
     color: var(--magnolia);
-    padding: 0.5rem;
     height: 75px;
     top: 0;
-    position: sticky;
     z-index: 50;
-
+    position: fixed;
+    left: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
   }
 
   .navbar__links {
     list-style-type: none;
-    padding: 0;
+    padding: 0 25px;
     margin: 0 auto;
     display: flex;
     gap: 0.5rem;

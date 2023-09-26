@@ -17,6 +17,11 @@ export const fetchProducts = async () => {
     return await response.json();
   }
 
+  export const fetchFeaturedProducts = async () => {
+    const allProducts = await fetchProducts();
+    return allProducts.filter(product => product.category === "electronics");
+  };
+
   export const fetchAllUsers = async () => {
     const response = await fetch(api + '/users');
     if (!response.ok) {

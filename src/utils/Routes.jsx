@@ -4,6 +4,7 @@ import ProductDetails from '../components/ProductDetails/ProductDetails';
 import Register from '../components/User/Register';
 import LoginForm from '../components/User/Login';
 import ViewCart from '../components/User/ViewCart';
+import CheckoutPage from '../components/SiteStructure/Checkout/CheckoutPage';
 
 const AppRoutes = () => {
   return (
@@ -12,7 +13,7 @@ const AppRoutes = () => {
       <Route path="/product/:id" element={<ProductDetails />} />
       <Route path="/register" element={<Register />} />
       <Route path="/login" element={<LoginForm />} />
-      <Route path="/cart" element={<ViewCart />} />
+      <Route path="/checkout" element={<CheckoutPage />} />
       
     </Routes>
   );
