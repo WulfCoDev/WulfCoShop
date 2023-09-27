@@ -1,30 +1,37 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import './Login.css'
+import { useAuth } from "./AuthContext";
 
 const LoginForm = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
+  const { login } = useAuth();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const response = await fetch("https://fakestoreapi.com/auth/login", {
-      method: "POST",
-      body: JSON.stringify({ username, password }),
+  
+
+    const response = await fetch('https://fakestoreapi.com/auth/login', {
+      method: 'POST',
       headers: {
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json'
       },
+      body: JSON.stringify({
+        username,
+        password
+      })
     });
 
     const data = await response.json();
-    
-    if (data.token) {
-      // Save token to localStorage for persistent authorization
-      localStorage.setItem("authToken", data.token);
 
-      // Navigate to the home page or dashboard
+    if (data.token) {
+     
+      login(username, password, data.token);
+
+     
       navigate("/");
     } else {
       console.error("Authentication failed");

@@ -9,8 +9,8 @@ const ShippingForm = () => {
         <input type="text" placeholder="Last Name" required />
         <input type="text" placeholder="Address" required />
         <input type="text" placeholder="City" required />
-        <input type="text" placeholder="Postal Code" required />
-        <input type="text" placeholder="Country" required />
+        <input type="text" placeholder="State" required />
+        <input type="text" placeholder="Zipcode" required />
       </form>
     </div>
   );

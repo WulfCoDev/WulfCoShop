@@ -1,4 +1,4 @@
-.featured-container {
+.mens-clothing-container {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -8,7 +8,7 @@
     min-height: 500px;
   }
 
-  .featured-title {
+  .mens-clothing-title {
     text-align: center;
     margin-bottom: 20px;
     font-size: 2rem;
@@ -16,32 +16,29 @@
     margin-left: 5rem;
   }
 
-  .featured-items-wrapper {
+  .mens-clothing-items-wrapper {
     display: flex;
     align-items: center;
   }
   
   
-  .featured-items {
+  .mens-clothing-items {
     display: flex;
-    overflow-x: scroll;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-    scroll-behavior: smooth;
     width: 80%;
     min-height: 400px;
+    object-fit: contain;
     }
 
-    .featured-item:hover {
+    .mens-clothing-item:hover {
         transform: scale(110%);
     }
 
   
-  .featured-item {
+  .mens-clothing-item {
     flex: 0 0 auto;
     scroll-snap-align: start;
-    width: 250px;
-    height: 350px;
+    width: 300px;
+    height: 400px;
     margin: 10px;
     border-radius: 12px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -53,49 +50,43 @@
     justify-content: space-between;
   }
   
-  .featured-item img {
-    object-fit: cover;
+  .mens-clothing-item img {
+    object-fit: contain;
     width: 90%;
     max-height: 200px;
     padding: 10px;
-    margin: auto;
     
   }
   
-  .featured-item h3 {
-    margin: auto;
+  .mens-clothing-item h3 {
+    margin: 10px;
     text-align: center;
-    font-size: 12px;
+    font-size: 1rem;
     color: black;
   }
   
-  .featured-item p {
+  .mens-clothing-item p {
+    margin: 10px;
     text-align: center;
-    font-size: 12px;
+    font-size: 1.2rem;
     font-weight: bold;
     color: black;
   }
-  
-  .scroll-button {
-    cursor: pointer;
-    background: transparent;
-    border: none;
-    font-size: 2rem;
-    padding: 0 10px;
-  }
 
-  .button--container {
+  .button-container {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
   }
 
-  .add_button, .details_button {
-    width: 20px;
-    height: 25px;
+  .addbutton, .detailsbutton {
+    width: 40px;  /* Set width */
+    height: 40px;  /* Set height */
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 14px;
 }
+
+
+  

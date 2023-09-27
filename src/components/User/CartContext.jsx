@@ -6,7 +6,20 @@ const CartDispatchContext = createContext();
 const reducer = (state, action) => {
   switch (action.type) {
     case 'ADD_ITEM':
-      return [...state, action.item];
+      // Check if item already exists in cart
+      const existingItem = state.find(item => item.id === action.item.id);
+      
+      if (existingItem) {
+        // Increment the quantity of the existing item
+        return state.map(item =>
+          item.id === action.item.id
+            ? { ...item, quantity: item.quantity + 1 }
+            : item
+        );
+      } else {
+        // Add new item to cart
+        return [...state, { ...action.item, quantity: 1 }];
+      }
     case 'REMOVE_ITEM':
       return state.filter(item => item.id !== action.id);
     case 'UPDATE_ITEM_QUANTITY':

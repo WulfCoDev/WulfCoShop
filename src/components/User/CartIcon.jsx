@@ -3,7 +3,7 @@ import { HiShoppingCart } from 'react-icons/hi2';
 import './CartIcon.css';
 import { useState } from 'react';
 import CartSidebar from './CartSideBar';
-import './CartSideBar.css';  // Add this line
+import './CartSideBar.css';
 
 
 const CartIcon = () => {

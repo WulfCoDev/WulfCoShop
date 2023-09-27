@@ -1,4 +1,4 @@
-.featured-container {
+.jewelry-container {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -8,7 +8,7 @@
     min-height: 500px;
   }
 
-  .featured-title {
+  .jewelry-title {
     text-align: center;
     margin-bottom: 20px;
     font-size: 2rem;
@@ -16,32 +16,28 @@
     margin-left: 5rem;
   }
 
-  .featured-items-wrapper {
+  .jewelry-items-wrapper {
     display: flex;
     align-items: center;
   }
   
   
-  .featured-items {
+  .jewelry-items {
     display: flex;
-    overflow-x: scroll;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-    scroll-behavior: smooth;
     width: 80%;
     min-height: 400px;
     }
 
-    .featured-item:hover {
+    .jewelry-item:hover {
         transform: scale(110%);
     }
 
   
-  .featured-item {
+  .jewelry-item {
     flex: 0 0 auto;
     scroll-snap-align: start;
-    width: 250px;
-    height: 350px;
+    width: 300px;
+    height: 400px;
     margin: 10px;
     border-radius: 12px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -53,8 +49,8 @@
     justify-content: space-between;
   }
   
-  .featured-item img {
-    object-fit: cover;
+  .jewelry-item img {
+    object-fit: contain;
     width: 90%;
     max-height: 200px;
     padding: 10px;
@@ -62,40 +58,17 @@
     
   }
   
-  .featured-item h3 {
-    margin: auto;
+  .jewelry-item h3 {
+    margin: 10px;
     text-align: center;
-    font-size: 12px;
+    font-size: 1rem;
     color: black;
   }
   
-  .featured-item p {
+  .jewelry-item p {
+    margin: 10px;
     text-align: center;
-    font-size: 12px;
+    font-size: 1.2rem;
     font-weight: bold;
     color: black;
   }
-  
-  .scroll-button {
-    cursor: pointer;
-    background: transparent;
-    border: none;
-    font-size: 2rem;
-    padding: 0 10px;
-  }
-
-  .button--container {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .add_button, .details_button {
-    width: 20px;
-    height: 25px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 14px;
-}

@@ -1,0 +1,27 @@
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+    width: fit-content;
+    margin: auto;
+    margin-bottom: 15px;
+  }
+  
+  .category-tile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 200px;
+    background-color: var(--thistle);
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+    width: 300px;
+  }
+  
+  .category-tile h3 {
+    margin: 0;
+  }
+  

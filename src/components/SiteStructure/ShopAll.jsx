@@ -2,10 +2,10 @@ import React, { useEffect, useState } from "react";
 import { fetchProducts } from "../../utils/api";
 import { useNavigate } from "react-router-dom";
 import { useDispatchCart } from "../User/CartContext";
-import './ProductGrid.css';
-import {HiEye, HiPlus} from 'react-icons/hi2';
+import './ShopAll.css';
+import {HiEye, HiPlus, HiMiniArrowUturnLeft} from 'react-icons/hi2';
 
-const ProductGrid = () => {
+const AllProducts = () => {
     const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(true);
     const [sortType, setSortType] = useState('name'); // Sorting state
@@ -75,11 +75,16 @@ const ProductGrid = () => {
       } else {
         console.error("Product price is undefined:", product);
       }
-    };    
+    };
+
+    const GoBack = () => {
+      navigate('/');
+  }
 
   return (
-    <div>
-        <div className="sort-filter-wrapper">
+    <div className="shopAllContainer">
+      <div className="return-arr" onClick={GoBack}><HiMiniArrowUturnLeft /></div>
+        <div className="sort--filter-wrapper">
         <select onChange={e => setSortType(e.target.value)}>
           <option value="name">Sort by Name</option>
           <option value="price">Sort by Price</option>
@@ -94,25 +99,25 @@ const ProductGrid = () => {
         </select>
         
       </div>
-    
-    <div className="product-grid">
+    <div className="--grid">
+        
     {filteredProducts.length === 0 ? (
         <div>No products available</div>
       ) : (filteredProducts.map((product) => (
-        <div className="product-tile" key={product.id}>
-          <img src={product.image} alt={product.title} className="product-image"/>
-          <div className="product-info">
+        <div className="product--tile" key={product.id}>
+          <img src={product.image} alt={product.title} className="product--image"/>
+          <div className="product--info">
             <h4>{product.category}</h4>
             <h3>{product.title}: <span>${product.price}</span></h3>
             
           </div>
-          <div className="product-actions">
+          <div className="product--actions">
           <button onClick={() => addToCart(product)} className="add-button">
                 <div >
                     <HiPlus />
                 </div>
             </button>
-            <button onClick={()=> handleViewDetails(product.id)} className="details-button">
+            <button onClick={()=> handleViewDetails(product.id)} className="details--button">
                 <div >
                     <HiEye />
                 </div>
@@ -126,4 +131,4 @@ const ProductGrid = () => {
   );
 };
 
-export default ProductGrid;
+export default AllProducts;

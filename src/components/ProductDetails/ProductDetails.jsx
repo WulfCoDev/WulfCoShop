@@ -36,14 +36,20 @@ const ProductDetails = () => {
         return <div>Product not found</div>;
     }
     const addToCart = (product) => {
-        dispatch({ type: 'ADD_ITEM', item: { ...product, quantity: 1 } });
-      };
+        console.log("Adding item to cart:", product);
+      
+        if (typeof product.price !== 'undefined') {
+          dispatch({ type: 'ADD_ITEM', item: { ...product, quantity: 1 } });
+        } else {
+          console.error("Product price is undefined:", product);
+        }
+      }; 
     const GoBack = () => {
         navigate('/');
-    }
+    };
     return (
         <div className="product-details">
-            <div className="return" onClick={GoBack}><HiMiniArrowUturnLeft /></div>
+            <div className="return" onClick={GoBack}><HiMiniArrowUturnLeft /></div> 
             
             <img src={product.image} alt={product.title} />
             <div className="product-info">
@@ -51,7 +57,7 @@ const ProductDetails = () => {
             <p className="reviews"><HiStar /> {product.rating.rate} <HiMiniChatBubbleBottomCenterText /> {product.rating.count} Reviews</p>
             <p>{product.description}</p>
             <p>Price: ${product.price}</p>
-            <button className="add-to-cart-btn" onClick={addToCart}>Add to Cart</button>
+            <button className="add-to-cart-btn" onClick={() => addToCart(product)}>Add to Cart</button>
             </div>
             
         </div>

@@ -17,6 +17,26 @@ export const fetchProducts = async () => {
     return await response.json();
   }
 
+  export const fetchJewelryProducts = async () => {
+    const allProducts = await fetchProducts();
+    return allProducts.filter(product => product.category === "jewelery");
+  };
+
+  export const fetchMensClothingProducts = async () => {
+    const allProducts = await fetchProducts();
+    return allProducts.filter(product => product.category === "men's clothing");
+  };
+
+  export const fetchWomensClothingProducts = async () => {
+    const allProducts = await fetchProducts();
+    return allProducts.filter(product => product.category === "women's clothing");
+  };
+
+  export const fetchElectronicProducts = async () => {
+    const allProducts = await fetchProducts();
+    return allProducts.filter(product => product.category === "electronics");
+  };
+
   export const fetchFeaturedProducts = async () => {
     const allProducts = await fetchProducts();
     return allProducts.filter(product => product.category === "electronics");
