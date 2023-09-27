@@ -4,12 +4,14 @@ import ShippingForm from './ShippingForm';
 import BillingForm from './BillingForm';
 import ShippingOptionsForm from './ShippingOptionsForm';
 import './CheckoutPage.css';
+import { useDispatchCart } from '../../User/CartContext';
 
 const CheckoutPage = () => {
   const navigate = useNavigate();
+  const dispatch = useDispatchCart();
 
   const handlePlaceOrder = () => {
-    // Do validation, API calls etc.
+    dispatch({ type: 'CLEAR_CART' });
     navigate('/order-success');
   };
 
