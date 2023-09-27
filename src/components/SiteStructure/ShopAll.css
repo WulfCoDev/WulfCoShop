@@ -1,0 +1,89 @@
+.--grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+    background-color: white;
+    overflow: hidden;
+    margin: 50px;
+  }
+  
+  .product--tile {
+    position: relative;
+    text-align: center;
+    width: 300px;
+    height: 300px;
+    margin: 2rem;
+    margin-bottom: 4rem;
+  }
+  
+  .product--image {
+    width: 160px;
+    height: 160px;
+    padding: 75px;
+    border: 0.5px solid rgba(0, 0, 0, 0.068);
+    
+  }
+  
+  .product--info {
+    color: black;
+    
+  }
+
+  .product--info h3 {
+    font-size: 14px;
+  }
+
+  .product--info h4 {
+    font-size: 10px;
+    color: gray;
+  }
+  
+  .product--actions {
+    display: none;
+    position: absolute;
+    top: 0; 
+    right: 0; 
+    flex-direction: column; 
+    z-index: 1;  
+    margin: auto;
+}
+
+.product--tile:hover .product--actions {
+    display: flex;
+}
+
+.add--button, .details--button {
+    width: 40px; 
+    height: 40px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.add--button {
+    background-color: red;
+    color: white;
+    margin-bottom: 5px;
+}
+
+.details--button {
+    background-color: white;
+    color: black;
+    margin-top: 0;
+    box-shadow: 5px;
+}
+
+.return-arr {
+  display: flex;
+  justify-content: start;
+  margin-left: 50px;
+  font-size: 24px;
+}
+
+.shopAllContainer {
+  display: flex;
+  margin-top: 100px;
+  flex-direction: column;
+}
+  
+  

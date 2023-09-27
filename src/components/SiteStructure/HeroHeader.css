@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Gruppo&family=Paytone+One&display=swap');
+
+.hero-header {
+    position: relative;
+    text-align: center;
+    background-color: var(--lavender-blush);
+    border-bottom: 2px solid black;
+  }
+  
+  .hero-image {
+    width: auto;
+    height: auto;
+    opacity: 0.8;
+  }
+  
+  .hero-text {
+    position: absolute;
+    top: 45%;
+    left: 25%;
+    transform: translate(-50%, -50%);
+    
+    border-radius: 10px;
+  }
+  
+  .hero-text h1 {
+    font-family: 'Gruppo';
+    font-size: 6.5rem;
+    color: palevioletred;
+  }
+  
+  .hero-text p {
+    color: palevioletred;
+    font-family: 'Gruppo';
+    font-size: 5rem;
+  }
+  
+  .hero-text span {
+    font-family: 'Paytone One';
+  }

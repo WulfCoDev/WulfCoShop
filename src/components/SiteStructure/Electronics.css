@@ -1,0 +1,92 @@
+.electronics-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0;
+    background-color: rgb(255, 255, 255);
+    min-height: 500px;
+  }
+
+  .electronics-title {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2rem;
+    display: flex;
+    margin-left: 5rem;
+  }
+
+  .electronics-items-wrapper {
+    display: flex;
+    align-items: center;
+  }
+  
+  
+  .electronics-items {
+    display: flex;
+    width: 80%;
+    min-height: 400px;
+    object-fit: contain;
+    }
+
+    .electronics-item:hover {
+        transform: scale(110%);
+    }
+
+  
+  .electronics-item {
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+    width: 300px;
+    height: 450px;
+    margin: 5px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    background: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .electronics-item img {
+    object-fit: contain;
+    width: 90%;
+    max-height: 200px;
+    padding: 10px;
+    
+  }
+  
+  .electronics-item h3 {
+    margin: 10px;
+    text-align: center;
+    font-size: 1rem;
+    color: black;
+  }
+  
+  .electronics-item p {
+    margin: 10px;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: black;
+  }
+
+  .button-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .addbutton, .detailsbutton {
+    width: 40px;  /* Set width */
+    height: 40px;  /* Set height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+  
