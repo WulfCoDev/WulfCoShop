@@ -18,6 +18,7 @@ const CartSidebar = ({ isOpen, toggleSidebar, }) => {
 
     const toCheckout = () => {
       navigate ('/checkout');
+      toggleSidebar();
     }
 
   return (
