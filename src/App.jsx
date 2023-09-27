@@ -10,8 +10,8 @@ const App = () => {
     <Router>
       <AuthProvider>
       <CartProvider>
-      <Navbar />
-    <div className="container">
+      
+    <div className="container"><Navbar />
       <AppRoutes />
     </div>
     </CartProvider>
